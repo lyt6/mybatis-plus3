@@ -1,1 +1,1 @@
-# mybatis_plus3
+# mybatis-plus3
