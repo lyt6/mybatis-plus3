@@ -1,6 +1,7 @@
 package com.hello.mybatisplus.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hello.mybatisplus.dto.UserDTO;
@@ -17,7 +18,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements UserService {
 
     @Override
-    public Page pageUser(Page page, UserQuery query) {
+    public IPage pageUser(Page page, UserQuery query) {
         //分页
         page(page,new LambdaQueryWrapper<User>()
                 .likeRight(StringUtils.isNotBlank(query.getName()),User::getName,query.getName())
@@ -32,7 +33,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     }
 
     @Override
-    public Page pageUserXml(Page page, UserQuery query) {
+    public IPage pageUserXml(Page page, UserQuery query) {
         return baseMapper.pageUserXml(page,query);
     }
 

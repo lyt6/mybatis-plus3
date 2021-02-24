@@ -1,6 +1,7 @@
 package com.hello.mybatisplus.service.impl;
 
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hello.mybatisplus.MybatisPlusApplication;
 import com.hello.mybatisplus.query.UserQuery;
@@ -22,7 +23,7 @@ class UserServiceImplTest {
 
     @Test
     public void testPageList(){
-        Page page = userService.pageUser(new Page(1, 2), new UserQuery());
+        IPage page = userService.pageUser(new Page(1, 2), new UserQuery());
         long total = page.getTotal();
         long size = page.getSize();
         List records = page.getRecords();
