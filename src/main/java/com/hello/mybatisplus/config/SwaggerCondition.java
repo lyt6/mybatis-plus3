@@ -11,7 +11,6 @@ import java.util.Arrays;
 public class SwaggerCondition implements Condition {
     @Override
     public boolean matches(ConditionContext conditionContext, AnnotatedTypeMetadata annotatedTypeMetadata) {
-        log.info("spring.actives.profile:{}",conditionContext.getEnvironment().getActiveProfiles());
         return Arrays.stream(conditionContext.getEnvironment().getActiveProfiles()).anyMatch(a->!a.equals("prod"));
     }
 }

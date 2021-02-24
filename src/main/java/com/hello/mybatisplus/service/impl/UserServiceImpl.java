@@ -3,6 +3,7 @@ package com.hello.mybatisplus.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hello.mybatisplus.dto.UserDTO;
 import com.hello.mybatisplus.entity.User;
 import com.hello.mybatisplus.mapper.UserMapper;
 import com.hello.mybatisplus.query.UserQuery;
@@ -31,7 +32,33 @@ public class UserServiceImpl extends ServiceImpl<UserMapper,User> implements Use
     }
 
     @Override
+    public Page pageUserXml(Page page, UserQuery query) {
+        return baseMapper.pageUserXml(page,query);
+    }
+
+    @Override
     public User getUser(Long id) {
         return getById(id);
     }
+
+    @Override
+    public void addUser(UserDTO dto) {
+        User user = new User();
+        BeanUtils.copyProperties(dto,user);
+        save(user);
+    }
+
+    @Override
+    public void updateUserById(Long id, UserDTO dto) {
+        User user = new User();
+        BeanUtils.copyProperties(dto,user);
+        user.setId(id);
+        updateById(user);
+    }
+
+    @Override
+    public void delUser(Long id) {
+        removeById(id);
+    }
+
 }

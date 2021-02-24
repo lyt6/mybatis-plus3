@@ -5,3 +5,21 @@ spring:
     name: mybatis-plus
   profiles:
     active: dev
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    cache-enabled: true
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+    multiple-result-sets-enabled: true
+    use-column-label: true
+    use-generated-keys: false
+    auto-mapping-behavior: full
+    default-executor-type: reuse
+    default-statement-timeout: 600
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
