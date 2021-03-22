@@ -1,4 +1,4 @@
-package com.hello.mybatisplus.common;
+package com.hello.mybatis.plus.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

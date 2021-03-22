@@ -1,5 +1,6 @@
-package com.hello.mybatisplus.config;
+package com.hello.mybatis.plus.config;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableSwaggerBootstrapUi;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Conditional;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
+@EnableSwaggerBootstrapUi
 @Configuration
 @Conditional(SwaggerCondition.class)
 public class SwaggerConfig {
@@ -24,7 +26,7 @@ public class SwaggerConfig {
                 .enable(Boolean.TRUE)
                 .tags(new Tag("mybatis-plus3", "mybatis-plus3"))
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.hello.mybatisplus.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.hello.mybatis.plus.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

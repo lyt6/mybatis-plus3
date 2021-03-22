@@ -1,4 +1,4 @@
-package com.hello.mybatisplus.query;
+package com.hello.mybatis.plus.query;
 
 import lombok.Data;
 

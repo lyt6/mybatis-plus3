@@ -1,15 +1,15 @@
-package com.hello.mybatisplus.service.impl;
+package com.hello.mybatis.plus.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.hello.mybatisplus.dto.UserDTO;
-import com.hello.mybatisplus.entity.User;
-import com.hello.mybatisplus.mapper.UserMapper;
-import com.hello.mybatisplus.query.UserQuery;
-import com.hello.mybatisplus.service.UserService;
-import com.hello.mybatisplus.vo.UserVO;
+import com.hello.mybatis.plus.dto.UserDTO;
+import com.hello.mybatis.plus.query.UserQuery;
+import com.hello.mybatis.plus.service.UserService;
+import com.hello.mybatis.plus.entity.User;
+import com.hello.mybatis.plus.mapper.UserMapper;
+import com.hello.mybatis.plus.vo.UserVO;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

@@ -1,11 +1,11 @@
-package com.hello.mybatisplus.service;
+package com.hello.mybatis.plus.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.hello.mybatisplus.dto.UserDTO;
-import com.hello.mybatisplus.entity.User;
-import com.hello.mybatisplus.query.UserQuery;
+import com.hello.mybatis.plus.dto.UserDTO;
+import com.hello.mybatis.plus.entity.User;
+import com.hello.mybatis.plus.query.UserQuery;
 
 public interface UserService extends IService<User> {
 

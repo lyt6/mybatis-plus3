@@ -1,10 +1,10 @@
-package com.hello.mybatisplus;
+package com.hello.mybatis.plus;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Mybatisplus3ApplicationTests {
+class MybatisPlusApplicationTests {
 
     @Test
     void contextLoads() {
