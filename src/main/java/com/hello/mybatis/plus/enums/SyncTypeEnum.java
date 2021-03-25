@@ -3,6 +3,7 @@ package com.hello.mybatis.plus.enums;
 import com.baomidou.mybatisplus.annotation.IEnum;
 
 public enum SyncTypeEnum implements IEnum<Integer> {
+    DEFAULT(0,"未知"),
     ADD(1, "新增"),
     DELETE(2, "修改"),
     UPDATE(3, "删除");

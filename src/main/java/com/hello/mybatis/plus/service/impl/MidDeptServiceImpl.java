@@ -6,6 +6,8 @@ import com.hello.mybatis.plus.service.MidDeptService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p>
  * 同步广阳岛组织中间表 服务实现类
@@ -17,4 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MidDeptServiceImpl extends ServiceImpl<MidDeptMapper, MidDept> implements MidDeptService {
 
+    @Override
+    public List<MidDept> getAll() {
+        return baseMapper.getAll();
+    }
 }

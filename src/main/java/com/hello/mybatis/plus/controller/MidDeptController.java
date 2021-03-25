@@ -8,6 +8,8 @@ import com.hello.mybatis.plus.service.MidDeptService;
 import com.hello.mybatis.plus.entity.MidDept;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 /**
  * <p>
  * 同步广阳岛组织中间表 前端控制器
@@ -19,7 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 @RestController
 @RequestMapping("/midDept")
 public class MidDeptController {
-
 
     @Autowired
     private MidDeptService midDeptService;
@@ -58,4 +59,10 @@ public class MidDeptController {
         midDeptService.updateById(params);
         return new ResponseEntity<>("updated successfully", HttpStatus.OK);
     }
+
+    @GetMapping(value = "/all")
+    public ResponseEntity<List<MidDept>> getAll() {
+        return new ResponseEntity<>(midDeptService.getAll(), HttpStatus.OK);
+    }
+
 }
