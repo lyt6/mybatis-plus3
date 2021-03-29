@@ -1,6 +1,5 @@
 package com.hello.mybatis.plus.service.impl;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.hello.mybatis.plus.MybatisPlusApplication;
 import com.hello.mybatis.plus.query.UserQuery;
@@ -9,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
 @Slf4j
 @SpringBootTest(classes = MybatisPlusApplication.class)
 class UserServiceImplTest {
@@ -18,10 +15,20 @@ class UserServiceImplTest {
     @Autowired
     private UserServiceImpl userService;
 
+    /**
+     * 分页
+     */
     @Test
-    public void testPageList(){
-        IPage page = userService.pageUser(new Page(1, 2), new UserQuery());
-        assertTrue(page.getRecords().size() > 0);
+    public void testPage(){
+        userService.pageUser(new Page(1, 2), new UserQuery());
+    }
+
+    /**
+     * 全表删除
+     */
+    @Test
+    public void testDeleteAll() {
+        userService.remove(null);
     }
 
 }
