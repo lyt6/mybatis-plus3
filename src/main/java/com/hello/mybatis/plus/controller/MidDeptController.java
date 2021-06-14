@@ -1,5 +1,6 @@
 package com.hello.mybatis.plus.controller;
 
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.List;
  * @author Liuyongtao
  * @since 2021-03-24
  */
+@Api(tags = "部门信息")
 @RestController
 @RequestMapping("/midDept")
 public class MidDeptController {
